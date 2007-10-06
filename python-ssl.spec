@@ -1,3 +1,5 @@
+# TODO:
+# - drop bluez-libs-devel and other not needed stuff
 %define		module	ssl
 Summary:	SSL wrapper for socket objects from Python 2.6
 Name:		python-%{module}
@@ -9,6 +11,7 @@ Source0:	http://pypi.python.org/packages/source/s/ssl/ssl-%{version}.tar.gz
 # Source0-md5:	ef2fff1da3df0ca10746bd5e9ea02765
 Patch0:		%{name}-check.patch
 URL:		http://docs.python.org/dev/library/ssl.html
+BuildRequires:	bluez-libs-devel
 BuildRequires:	krb5-devel
 BuildRequires:	openssl-devel >= 0.9.7d
 BuildRequires:	python-devel < 1:2.6
