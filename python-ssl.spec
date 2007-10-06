@@ -50,6 +50,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%dir %{py_sitedir}/ssl
 %attr(755,root,root) %{py_sitedir}/ssl/*.so
 %{py_sitedir}/ssl/*.py[oc]
 %{py_sitedir}/*.egg-info
