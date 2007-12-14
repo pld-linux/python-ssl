@@ -3,13 +3,12 @@
 %define		module	ssl
 Summary:	SSL wrapper for socket objects from Python 2.6
 Name:		python-%{module}
-Version:	1.5
-Release:	1
+Version:	1.13
+Release:	0.1
 License:	PSF
 Group:		Libraries/Python
 Source0:	http://pypi.python.org/packages/source/s/ssl/ssl-%{version}.tar.gz
-# Source0-md5:	ef2fff1da3df0ca10746bd5e9ea02765
-Patch0:		%{name}-check.patch
+# Source0-md5:	f254773cb8023379fd071fd51112189a
 URL:		http://docs.python.org/dev/library/ssl.html
 BuildRequires:	bluez-libs-devel
 BuildRequires:	krb5-devel
@@ -32,7 +31,6 @@ exposed at the C level in Python 2.3.
 
 %prep
 %setup -q -n %{module}-%{version}
-%patch0 -p1
 
 %build
 python setup.py build
