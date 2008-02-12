@@ -1,0 +1,11 @@
+diff -ur ssl-1.13.org/setup.py ssl-1.13/setup.py
+--- ssl-1.13.org/setup.py	2007-12-02 22:47:15.000000000 +0100
++++ ssl-1.13/setup.py	2008-02-12 19:31:13.817091808 +0100
+@@ -135,6 +135,7 @@
+                                   '/usr/local/ssl/lib',
+                                   '/usr/contrib/ssl/lib/'
+                                  ] )
++    ssl_libs = []
+ 
+     if (ssl_incs is not None and ssl_libs is not None):
+         return ssl_incs, ssl_libs, ['ssl', 'crypto']
