@@ -1,7 +1,9 @@
 # TODO:
+# - optflags
 # - drop bluez-libs-devel and other not needed stuff
 %define		module	ssl
 Summary:	SSL wrapper for socket objects from Python 2.6
+Summary(pl.UTF-8):	Obudowanie SSL dla obiektów gniazd pochodzące z Pythona 2.6
 Name:		python-%{module}
 Version:	1.13
 Release:	1
@@ -30,17 +32,28 @@ difference is that the ssl.SSLError exception does not inherit from
 socket.error, as it does in Python 2.6, because socket.error is not
 exposed at the C level in Python 2.3.
 
+%description -l pl.UTF-8
+Stara obsługa TLS dla gniazd socket.ssl() w Pythonie 2.6 została
+zastąpiona nowym modułem ssl. Ten pakiet udostępnia ten moduł dla
+starszych wersji Pythona, począwszy od 2.3.5 (być może działa także
+ze starszymi, ale nie było to testowane).
+
+Moduł jest podobny do ssl z Pythona 2.6. Jedyną znaczącą różnicą jest
+to, że wyjątek ssl.SSLError nie dziedziczy z socket.error, tak jak w
+w Pythonie 2.6, ponieważ socket.error nie jest dostępny z poziomu C w
+Pythonie 2.3.
+
 %prep
 %setup -q -n %{module}-%{version}
 %patch0 -p1
 
 %build
-python setup.py build
+%{__python} setup.py build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-python setup.py install \
+%{__python} setup.py install \
 	--root=$RPM_BUILD_ROOT \
 	--install-lib=%{py_sitedir} \
 	--optimize=2
