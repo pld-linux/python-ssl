@@ -6,7 +6,7 @@ Summary:	SSL wrapper for socket objects from Python 2.6
 Summary(pl.UTF-8):	Obudowanie SSL dla obiektów gniazd pochodzące z Pythona 2.6
 Name:		python-%{module}
 Version:	1.13
-Release:	2
+Release:	3
 License:	PSF
 Group:		Libraries/Python
 Source0:	http://pypi.python.org/packages/source/s/ssl/ssl-%{version}.tar.gz
